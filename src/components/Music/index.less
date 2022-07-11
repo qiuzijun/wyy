@@ -1,0 +1,87 @@
+.list {
+    width: 250px;
+    color: black;
+    position: relative;
+
+    .img_content {
+        width: 250px;
+        height: 250px;
+        position: relative;
+
+        .button {
+            width: 60px;
+            height: 60px;
+            backdrop-filter: blur(8px);
+            background: @back-color;
+            border: 1px solid hsla(0, 0%, 100%, .08);
+            border-radius: 50%;
+            transition: all 0.3s;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            opacity: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                background: hsla(0, 0%, 100%, .28);
+            }
+        }
+
+        .img {
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            z-index: 5;
+
+            img {
+                width: 250px;
+                height: 250px;
+                border-radius: 10px;
+            }
+        }
+
+        .img-filter {
+            width: 250px;
+            height: 250px;
+            filter: blur(16px) opacity(.6);
+            transform: translateY(20px) scale(0.9);
+            position: absolute;
+            z-index: 1;
+            opacity: 0;
+            transition: all 0.3s;
+
+            img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    }
+
+    .text {
+        margin-top: 20px;
+
+        p:last-child {
+            font-size: 12px;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        .button {
+            width: 60px;
+            height: 60px;
+            opacity: 1;
+            transition: all 0.3s;
+        }
+
+        .img-filter {
+            transition: all 0.3s;
+            opacity: 1;
+        }
+    }
+}
